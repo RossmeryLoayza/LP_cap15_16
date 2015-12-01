@@ -1,0 +1,41 @@
+Capitulo 15
+
+1.
+
+(display "Hello World")
+(define pi 3.1416)
+(define potencia (lambda (B E)
+ (cond((= E 0) 1)
+ ((= E 1) B)
+ (else (* B (potencia B (- E 1))))))
+)
+(define circle-vol (lambda (radius) (/ (* 4 (* pi (potencia radius 3))) 3)))
+(circle-vol 3)
+(newline)
+
+2.
+
+(define (solve-quadratic-equation a b c)
+  (define disc (sqrt (- (* b b)
+                        (* 4.0 a c))))
+  (/ (+ (- b) disc)
+     (* 2.0 a)))
+	 
+3.
+
+
+4.
+
+(define potencia  B E
+ (cond((= E 0) 1)
+ ((= E 1) B)
+ (else (* B (potencia B (- E 1))))))
+)
+  
+5.
+
+(define (contar lst)
+  (contador (lambda (element contar)
+          (if (0? element) (+ contar 1) contar))
+		  0 lst))
+
