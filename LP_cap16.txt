@@ -1,0 +1,37 @@
+Capitulo 16
+
+1.  
+ 
+madre(X,Y) :- padres(X,Y), mujer(X).
+ 
+ 
+2.
+ 
+hermanos(X,Y) :- padres(M,X), padres(M,Y), not(X = Y).
+hermana(X,Y) :- hermanos(X,Y), mujer(X).
+ 
+ 
+3. 
+ 
+maximo([X],X).
+maximo([X|Y],X):- maximo(Y,Z), X >= Z.
+maximo([X|Y],N):- maximo(Y,N), N > X.
+
+
+4.
+
+interseccion_v([X],[Y]).
+interseccion_v(X,Y):-interseccion(X,Y,[]).
+
+
+5.
+
+unionL([],X,X).
+unionL([X|Y],Z,W):- miembro(X,Z),!,unionL(Y,Z,W).
+unionL([X|Y],Z,[X|W]):- unionL(Y,Z,W).
+
+ 
+6.
+
+final(X,[X]).
+final(X,[Y|Z]):- final(X,Z).
