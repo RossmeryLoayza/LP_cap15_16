@@ -39,3 +39,10 @@ Capitulo 15
           (if (0? element) (+ contar 1) contar))
 		  0 lst))
 
+7.
+
+(define borrar
+  (lambda (I L)
+    (cond
+     ((equal? I (car L)) (cdr L))
+     (else (cons (car L) (borrar I (cdr L)))))))
